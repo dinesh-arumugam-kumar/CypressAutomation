@@ -8,6 +8,12 @@ describe('My First Test Suite', function(){
         cy.get('.product:visible').should('have.length',4)
         cy.get('.products').find('.product').should('have.length',4)
         cy.wait(1000)
-        cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
+        // cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
+        cy.get('.products').find('.product').each(($el,index, $list) => {
+            const textval = $el.find('h4.product-name').text()
+            if(textval.includes('Cashews')){
+                cy.wrap($el).find('button').click()
+            }
+        })
     })
 })
