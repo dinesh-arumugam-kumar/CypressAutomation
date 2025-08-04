@@ -3,25 +3,25 @@
 import 'cypress-iframe';
 
 describe('Handling Child Window, Frames & Calendar Suite', () =>{
-    // it('Handling Child Window',() =>{
-    //     cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
-    //     cy.get('#opentab').then((el)=>{
-    //         const url = el.prop('href')
-    //         cy.visit(url)
-    //         cy.origin(url,()=>{
-    //             cy.get(".sub-menu-bar a[href*='about']").click()
-    //             cy.get(".mt-50 h2").should('contain','QAClick Academy')
-    //         })
-    //     })
-    // })
+    it('Handling Child Window',() =>{
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get('#opentab').then((el)=>{
+            const url = el.prop('href')
+            cy.visit(url)
+            cy.origin(url,()=>{
+                cy.get(".sub-menu-bar a[href*='about']").click()
+                cy.get(".mt-50 h2").should('contain','QAClick Academy')
+            })
+        })
+    })
 
-    // it('Handling Frames',()=>{
-    //     cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
-    //     cy.frameLoaded('#courses-iframe')
-    //     cy.iframe().find("a[href*='mentorship']").eq(0).click()
-    //     cy.wait(2000)
-    //     cy.iframe().find("h1[class*='pricing-title']").should('have.length',2)
-    // })
+    it('Handling Frames',()=>{
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.frameLoaded('#courses-iframe')
+        cy.iframe().find("a[href*='mentorship']").eq(0).click()
+        cy.wait(2000)
+        cy.iframe().find("h1[class*='pricing-title']").should('have.length',2)
+    })
 
     it('Calendar Test',()=>{
         const monthNumber = "5"
