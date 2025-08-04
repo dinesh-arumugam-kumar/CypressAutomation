@@ -1,4 +1,4 @@
-///<reference types="Cypress"/>
+///<reference types="cypress"/>
 
 describe('Handling webControls Suite', function(){
     it('CheckBox Automation',function(){

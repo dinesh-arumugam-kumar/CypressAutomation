@@ -1,4 +1,4 @@
-///<reference types="Cypress"/>
+///<reference types="cypress"/>
 
 describe('Handling Alerts, Popups & Child Window Suite', () =>{
     it('Popup & Alerts Automation',()=>{
