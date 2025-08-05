@@ -43,6 +43,7 @@ describe('Handling Child Window, Frames & Calendar Suite', () => {
         })
         cy.contains('button', 'Checkout').click()
         cy.get('#country').type('Ind')
+        // Cypress.config('defaultCommandTimeout',8000)
         cy.wait(1000)
         cy.get('.suggestions ul li a').each($el => {
             if ($el.text() === 'India') {
